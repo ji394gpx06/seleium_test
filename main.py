@@ -5,7 +5,7 @@
 from selenium import webdriver
 from selenium.webdriver.chrome.options import Options
 
-ChromeDRVIER_PATH = '/Users/ruijun/PycharmProjects/pythonProject/chromedriver'
+ChromeDRVIER_PATH = '/usr/local/bin/chromedriver'
 
 def crowweb():
     chrome_options = Options
