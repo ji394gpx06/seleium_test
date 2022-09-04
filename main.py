@@ -15,6 +15,8 @@ def crowweb():
     chrome_options.add_argument("--window-size=%s" % WINDOW_SIZE)
     chrome_options.add_argument('blink-settings=imagesEnabled=false')
     chrome_options.add_argument('--disable-gpu')
+    chrome_options.add_argument('--no-sandbox')
+    chrome_options.add_argument('--disable-dev-shm-usage')
     driver = webdriver.Chrome(executable_path=ChromeDRVIER_PATH,chrome_options=chrome_options)
 
     driver.get("https://finance.yahoo.com/watchlists/")
