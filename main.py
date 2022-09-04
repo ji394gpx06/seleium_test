@@ -8,8 +8,6 @@ ChromeDRVIER_PATH = 'chromedriver'
 def crowweb():
     from selenium import webdriver
 
-
-CHROMEDRIVER_PATH = '/usr/local/bin/chromedriver'
 WINDOW_SIZE = "1920,1080"
 
 chrome_options = Options()
