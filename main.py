@@ -3,7 +3,7 @@ from selenium import webdriver
 from selenium.webdriver.common.by import By
 from selenium.webdriver.chrome.options import Options
 import urllib3
-ChromeDRVIER_PATH = '/usr/local/bin/chromedriver'
+ChromeDRVIER_PATH = 'chromedriver'
 
 def crowweb():
     from selenium import webdriver
