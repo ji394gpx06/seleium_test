@@ -8,10 +8,11 @@ from selenium.webdriver.chrome.options import Options
 ChromeDRVIER_PATH = '/usr/local/bin/chromedriver'
 
 def crowweb():
-    chrome_options = Options
     chrome_options = Options()
-    chrome_options.add_argument('--headless')  # 啟動Headless 無頭
-    chrome_options.add_argument('--disable-gpu') #關閉GPU 避免某些系統或是網頁出錯
+    WINDOW_SIZE = "1920,1080"
+    chrome_options.add_argument("--headless")
+    chrome_options.add_argument("--window-size=%s" % WINDOW_SIZE)
+    chrome_options.add_argument('--no-sandbox')
     driver = webdriver.Chrome(executable_path=ChromeDRVIER_PATH,chrome_options=chrome_options)
 
     driver.get("https://finance.yahoo.com/watchlists/")
