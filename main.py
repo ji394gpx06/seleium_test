@@ -3,7 +3,7 @@
 # Press ⌃R to execute it or replace it with your code.
 # Press Double ⇧ to search everywhere for classes, files, tool windows, actions, and settings.
 from selenium import webdriver
-import selenium
+from selenium.webdriver.common.by import By
 from selenium.webdriver.chrome.options import Options
 
 ChromeDRVIER_PATH = '/usr/local/bin/chromedriver'
@@ -17,10 +17,10 @@ def crowweb():
     driver = webdriver.Chrome(executable_path=ChromeDRVIER_PATH,chrome_options=chrome_options)
 
     driver.get("https://finance.yahoo.com/watchlists/")
-    SP500=driver.find_elements(By.id("marketsummary-itm-0"))
+    SP500=driver.find_elements(By.ID,("marketsummary-itm-0"))
     for element in SP500:
         print(element.text)
-    Dow30=driver.find_elements(By.id("marketsummary-itm-1"))
+    Dow30=driver.find_elements(By.ID,("marketsummary-itm-1"))
     for element in Dow30:
         print(element.text)
     driver.close()
