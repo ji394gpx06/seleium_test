@@ -20,12 +20,13 @@ def crowweb():
     driver = webdriver.Chrome(executable_path=ChromeDRVIER_PATH,chrome_options=chrome_options)
 
     driver.get("https://finance.yahoo.com/watchlists/")
-    SP500=driver.find_elements(By.ID,("marketsummary-itm-0"))
-    for element in SP500:
-        print(element.text)
-    Dow30=driver.find_elements(By.ID,("marketsummary-itm-1"))
-    for element in Dow30:
-        print(element.text)
+    print(driver.title)
+    #SP500=driver.find_elements(By.ID,("marketsummary-itm-0"))
+    #for element in SP500:
+     #   print(element.text)
+    #Dow30=driver.find_elements(By.ID,("marketsummary-itm-1"))
+    #for element in Dow30:
+     #   print(element.text)
     driver.close()
 if __name__ == '__main__':
     crowweb()
