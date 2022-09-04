@@ -1,7 +1,4 @@
-# This is a sample Python script.
-
-# Press ⌃R to execute it or replace it with your code.
-# Press Double ⇧ to search everywhere for classes, files, tool windows, actions, and settings.
+# This is a sample Python scr
 from selenium import webdriver
 from selenium.webdriver.common.by import By
 from selenium.webdriver.chrome.options import Options
@@ -9,25 +6,29 @@ import urllib3
 ChromeDRVIER_PATH = '/usr/local/bin/chromedriver'
 
 def crowweb():
-    chrome_options = Options()
-    WINDOW_SIZE = "1920,1080"
-    chrome_options.add_argument("--headless")
-    chrome_options.add_argument("--window-size=%s" % WINDOW_SIZE)
-    chrome_options.add_argument('blink-settings=imagesEnabled=false')
-    chrome_options.add_argument('--disable-gpu')
-    chrome_options.add_argument('--no-sandbox')
-    chrome_options.add_argument('--disable-dev-shm-usage')
-    driver = webdriver.Chrome(executable_path=ChromeDRVIER_PATH,chrome_options=chrome_options)
+    from selenium import webdriver
 
-    driver.get("https://finance.yahoo.com/watchlists/")
-    print(driver.title)
+
+CHROMEDRIVER_PATH = '/usr/local/bin/chromedriver'
+WINDOW_SIZE = "1920,1080"
+
+chrome_options = Options()
+chrome_options.add_argument("--headless")
+chrome_options.add_argument("--window-size=%s" % WINDOW_SIZE)
+chrome_options.add_argument('--no-sandbox')
+
+driver = webdriver.Chrome(executable_path=CHROMEDRIVER_PATH,
+                          chrome_options=chrome_options
+                         )
+driver.get("https://www.google.com")
+print(driver.title)
+driver.close()
     #SP500=driver.find_elements(By.ID,("marketsummary-itm-0"))
     #for element in SP500:
      #   print(element.text)
     #Dow30=driver.find_elements(By.ID,("marketsummary-itm-1"))
     #for element in Dow30:
      #   print(element.text)
-    driver.close()
 if __name__ == '__main__':
     crowweb()
 
