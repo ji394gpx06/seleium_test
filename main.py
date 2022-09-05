@@ -1,9 +1,7 @@
-# This is a sample Python scr
-from selenium import webdriver
+
 from selenium.webdriver.common.by import By
 from selenium.webdriver.chrome.options import Options
-import urllib3
-
+from selenium import webdriver
 
 def crowweb():
     from selenium import webdriver
@@ -11,10 +9,10 @@ ChromeDRVIER_PATH = 'chromedriver'
 WINDOW_SIZE = "1920,1080"
 
 chrome_options = Options()
-chrome_options.add_argument("--headless")
-chrome_options.add_argument("--window-size=%s" % WINDOW_SIZE)
+chrome_options.headless = True
 chrome_options.add_argument('--no-sandbox')
-
+chrome_options.add_argument('window-size=1920x1080')
+chrome_options.add_argument('blink-settings=imagesEnabled=false')
 driver = webdriver.Chrome(executable_path=ChromeDRVIER_PATH,
                           chrome_options=chrome_options
                          )
