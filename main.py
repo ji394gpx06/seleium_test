@@ -3,11 +3,9 @@ from selenium.webdriver.common.by import By
 from selenium.webdriver.chrome.options import Options
 from selenium import webdriver
 from selenium.webdriver.chrome.service import Service as ChromeService
-#from webdriver_manager.chrome import ChromeDriverManager
 def crowweb():
-    from selenium import webdriver
     ChromeDRVIER_PATH = 'chromedriver'
-    Service = ChromeService(executable_path=ChromeDRVIER_PATH,)
+    Service = ChromeService(executable_path=ChromeDRVIER_PATH)
     chrome_options = Options()
     chrome_options.headless = True
     chrome_options.add_argument('--no-sandbox')
@@ -16,14 +14,14 @@ def crowweb():
     driver = webdriver.Chrome(service=Service,
                           options=chrome_options
                          )
-    driver.get("https://finance.yahoo.com/watchlists/")
+    driver.get("https://google.com")
     print(driver.title)
-    SP500=driver.find_elements(By.ID,("marketsummary-itm-0"))
-    for element in SP500:
-        print(element.text)
-    Dow30=driver.find_elements(By.ID,("marketsummary-itm-1"))
-    for element in Dow30:
-        print(element.text)
+    #SP500=driver.find_elements(By.ID,("marketsummary-itm-0"))
+    #for element in SP500:
+     #   print(element.text)
+    #Dow30=driver.find_elements(By.ID,("marketsummary-itm-1"))
+    #for element in Dow30:
+     #   print(element.text)
     driver.close()
 if __name__ == '__main__':
     crowweb()
