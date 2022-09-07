@@ -16,7 +16,7 @@ def crowweb():
     driver = webdriver.Chrome(service=Service,
                           options=chrome_options
                          )
-    driver.get("https://www.google.com")
+    driver.get("https://finance.yahoo.com/watchlists/")
     print(driver.title)
     SP500=driver.find_elements(By.ID,("marketsummary-itm-0"))
     for element in SP500:
